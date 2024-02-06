@@ -50,7 +50,9 @@ export const getMessage = async (req, res) => {
       participants: { $all: [senderId, userToChatId] },
     }).populate("messages"); //NOT REFERENCE BUT ACTUAL MESSAGES
 
-    res.status(200).json(conversation.messages);
+    if (!conversation) return res.status(200).json([]);
+
+    res.status(200).json(conversation.messages || "");
   } catch (error) {
     console.log("Error in getMessage", error.message);
     res.status(500).json({ error: "Internal Server Error" });
