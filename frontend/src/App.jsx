@@ -4,7 +4,7 @@ import { HomePage } from "./pages/home/HomePage";
 import { LoginPage } from "./pages/login/LoginPage";
 import { SignUpPage } from "./pages/signup/SignUpPage";
 import { Toaster } from "react-hot-toast";
-import { useAuthContext } from "./context/authContext";
+import { useAuthContext } from "./context/AuthContext";
 
 function App() {
   const { authUser } = useAuthContext();
