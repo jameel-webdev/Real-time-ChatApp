@@ -9,7 +9,7 @@ export const SingleMessage = ({ message }) => {
 
   const formattedTime = extractTime(message.createdAt);
 
-  const chatClassName = fromMe ? "chat-start" : "chat-end";
+  const chatClassName = fromMe ? "chat-end" : "chat-start";
 
   const profilePic = fromMe
     ? authUser.profilePic

@@ -5,8 +5,9 @@ import authRoutes from "./routes/authRoutes.js";
 import messageRoutes from "./routes/messageRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import cookieParser from "cookie-parser";
+import { app, server } from "./socket/socket.js";
 
-const app = express();
+// const app = express();
 dotenv.config();
 const PORT = process.env.PORT || 5000;
 
@@ -23,7 +24,7 @@ app.get("/", (req, res) => {
   res.send("Realtime ChatApp");
 });
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   connectDb();
   console.log(`Server is Running on port ${PORT}`);
 });
